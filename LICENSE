@@ -1,1 +1,26 @@
 today i learn how to use git
+already learned command:
+1.初始化类
+git | 查看当前git的信息，么有安装会提示信息
+git config --global user.name "your name" | --global参数，用了这个参数，表示你这台机器上所有的Git仓库都会使用这个配置，当然也可以对某个仓库指定不同的用户名和Email地址。
+git config --global user.email "email@example.com" |
+mkdir learngit | 在当前路径创建文件夹
+cd learngit | 进入到此路径
+pwd | 显示当前目录,是绝对路径
+git init | 吧当前目录变成git管理的目录，git 会创建.git的文件夹
+2.查询类
+git status | 查询状态
+git log | 查询从最近到最远的提交日志
+git log --pretty=oneline | 查看简约版的日志
+cat readme.txt | 查看文件内容
+git diff HEAD -- readme.txt | 查看工作区和版本库里最新版本的区别
+
+3.操作类
+git add readme.txt | 添加文件的修改到git的缓存区stage，之后需要commit
+git rm test.txt | 删除一个文件，之后需要commit
+git commit -m"this changed something" | 调教当前缓存区到git的分支，默认是git创建的master分支
+git checkout -- readme.txt | 检出文件的最新版本并且覆盖掉当前文件
+git reset --hard head^ | 回退到上一个版本。head标识当前版本，head^是上个版本，head^^是上上个版本，head~100是100个之前的版本
+git reset --hard 23524234 | 回退到某一个版本，数字是版本号的前几位，git会自己去匹配
+git reset head readme.txt | 吧git暂存区的修改撤销掉
+git reflog | 查看所有的更改日志
