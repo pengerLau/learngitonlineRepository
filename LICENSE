@@ -24,3 +24,9 @@ git reset --hard head^ | 回退到上一个版本。head标识当前版本，hea
 git reset --hard 23524234 | 回退到某一个版本，数字是版本号的前几位，git会自己去匹配
 git reset head readme.txt | 吧git暂存区的修改撤销掉
 git reflog | 查看所有的更改日志
+
+4.远程仓库
+$ ssh-keygen -t rsa -C "youremail@example.com" | 如果git的用户跟目录下米有.ssh文件夹，通过这个创建ssh的私钥和公钥，里面可以设置密码，一般不用
+git remote add origin git@server-name:path/repo-name.git | $ git remote add origin git@github.com:accountName/learngitrepository.git | 把本地的仓库关联到某个远程库上，origin是远程库的名字，accountname是GitHub的账户名，learngitrepository是github上添加的new repository名字
+$ git push -u origin master | 把本地库推送到远程库上，第一次推送master分支时，加上了-u参数
+$ git push origin master | 本地master分支的最新修改推送至GitHub
